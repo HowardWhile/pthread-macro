@@ -6,12 +6,19 @@
 
 int main (void)
 {   
-    PAUSE;
     my_class cc;
-    cc.bg_func_start();
+
+    printf("backgroud worker start...\r\n"); 
+    PAUSE;        
+
+    cc.bg_func1_Start();
+    cc.bg_func2_Start();
     PAUSE;
-    cc.bg_func_close();
-    PAUSE;
-    printf("background work close...\r\n");
-    PAUSE;
+
+    cc.bg_func1_Close(); 
+    cc.bg_func2_Close(); 
+    printf("backgroud worker close...\r\n");
+    PAUSE;    
+
+    printf("demo complete...\r\n");
 }

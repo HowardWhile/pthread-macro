@@ -22,17 +22,27 @@ public:
 
     }
 
-    BACKGROUND_WORKER(my_class, bg_func)
+    BACKGROUND_WORKER(my_class, bg_func1)
     {
         while (true)
         {
             this->count++;
-            std::cout << "out from my_class::func:\t" << this->count << std::endl;
+            std::cout << "out from my_class::bg_func1: " << this->count << std::endl;
             usleep(100000);
         }
     }
 
-private:
+    BACKGROUND_WORKER(my_class, bg_func2)
+    {
+        while (true)
+        {
+            this->count++;
+            std::cout << "out from my_class::bg_func2: " << this->count << std::endl;
+            usleep(100000);
+        }
+    }
+
+private:    
 };
 
 #endif
