@@ -10,13 +10,11 @@
 class my_class
 {
 public:
-    int count1;
-    int count2;
+    int count;
 
     my_class()    
     {
-        this->count1 = 0;
-        this->count2 = 0;
+        this->count = 0;
     }
 
     ~my_class()
@@ -24,22 +22,12 @@ public:
 
     }
 
-    BACKGROUND_WORKER(my_class, add)
+    BACKGROUND_WORKER(my_class, bg_func)
     {
         while (true)
         {
-            this->count1++;
-            std::cout << "out from my_class::add:\t" << this->count1 << std::endl;
-            usleep(100000);
-        }
-    }
-
-    BACKGROUND_WORKER(my_class, sub)
-    {
-        while (true)
-        {
-            this->count2--;
-            std::cout << "out from my_class::sub:\t" << this->count2 << std::endl;
+            this->count++;
+            std::cout << "out from my_class::func:\t" << this->count << std::endl;
             usleep(100000);
         }
     }
